@@ -160,6 +160,7 @@ function scaleDown() {
   //Aqui tu codigo
   let pixelsFP = pixels.filter((_,i) => i % 2 === 0);
   let pixelsX = pixelsFP.map(fila => fila.filter((_, j) => j % 2 === 0));
+
   pixels = {...pixelsX};
 
   handler.savePixels(pixels, outputPath, handler.getShape()[0] / 2, handler.getShape()[1] / 2);
