@@ -236,6 +236,7 @@ function merge(alphaFirst, alphaSecond) {
     }
   }
 
+
   dogHandler.savePixels(pixels, outputPath);
 }
 
