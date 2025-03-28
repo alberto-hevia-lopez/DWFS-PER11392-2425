@@ -53,7 +53,7 @@ function suggest(numAsientos) {
         i--;
     }
 
-    return(resultado);
+    return resultado;
 }
 
 // Inicializar la matriz

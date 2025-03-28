@@ -206,6 +206,7 @@ function invertColors() {
     }
   }
 
+
   handler.savePixels(pixels, outputPath);
 }
 
