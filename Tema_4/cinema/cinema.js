@@ -11,7 +11,6 @@ asignarIds();
 document.addEventListener('DOMContentLoaded', () => {
     // Asignar manejadores de eventos a los campos del formulario
     document.getElementById('numAsientos').addEventListener('change', seleccionarAsientos);
-    // document.getElementById('reservar').addEventListener('click', seleccionarAsientos);
 });
 
 // Asignamos Ids a las butacas de una tabla
