@@ -20,18 +20,18 @@
 - Las reservas corresponden a un usuario y deben contener información de la película y la sala.
 - El pago está asociado a la reserva (del usuario). Como atributo contiene el importe (no incluyo tarjeta).
 
-|  Método HTTP  | URI  | Query Params  |  Cuerpo de la Petición | Cuerpo de la Respuesta  | Códigos de Respuesta  |
-| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
-| POST  | /movies  |  N/A | {"titulo": "El Padrino", "categoria": "drama"} | {"movieId": 1, "titulo": "El Padrino", "categoria:":"drama"}  | 201 Created 400 bad request 500 Internal Server Error  |
-| DELETE | /movies/{movieId}  | N/A  | N/A  | {"message": "Pelicula eliminada"}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
-| PUT (NO es parcialmente) | /movies/{movieId}  | N/A  | {"titulo": "El Padrino II", "categoria": "drama / historica"}  | {"movieId": 1, "titulo": "El Padrino II", "categoria:":"drama /  historica"}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
-| POST  | /rooms  |  N/A | {"numero": 7} | {"roomId": 1, "numero": 7}  | 201 Created 400 bad request 500 Internal Server Error  |
-| DELETE | /rooms/{roomId}  | N/A  | N/A  | {"message": "Sala eliminada"}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
-| PATCH (parcialmente) | /rooms/{movieId}  | N/A  | {"numero": 3}  | {"roomId": 1, "numero:": 3}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
-| POST  | /users  |  N/A | {"nombre": "Alberto Hevia"} | {"userId": 1, "nombre": "Alberto Hevia"}  | 201 Created 400 bad request 500 Internal Server Error  |
-| DELETE | /users/{userId}  | N/A  | N/A  | {"message": "Usuario eliminada"}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
-| PATCH (parcialmente) | /users/{userId}  | N/A  | {"nombre": "Alberto Hevia López"}  | {"userId": 1, "nombre:": "Alberto Hevia López"}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
-| POST  | /users/{userId}/reservations  |  N/A | {"movieId": 1, "roomId": 1} | {"userId": 1, "reservationId": 1, "movieId": 1, "roomId": 1}  | 201 Created 400 bad request 500 Internal Server Error  |
-| DELETE | /users/{userId}/reservations/{reservationId}  | N/A  | N/A  | {"message": "Reserva Elimina"}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
-| PATCH (solamente modifica la pelicula no la sala) | /users/{userId}/reservations/{reservationId}  | N/A  | {"movieId": 2}  | {"userId": 1, "reservationId": 1, "movieId": 2, "roomId": 1}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error |
-| POST (pago de la reserva)  | /users/{userId}/reservations/{reservationId}/payments  |  N/A | {"importe": 9.50} | {"userId": 1, "reservationId": 1, "paymentId": 1, "pago": 9.50}  | 201 Created 400 bad request 500 Internal Server Error  |
+|  Método HTTP  | URI                                                   | Query Params  |  Cuerpo de la Petición | Cuerpo de la Respuesta  | Códigos de Respuesta  |
+| ------------ |-------------------------------------------------------| ------------ | ------------ | ------------ | ------------ |
+| POST  | /movies                                               |  N/A | {"titulo": "El Padrino", "categoria": "drama"} | {"movieId": 1, "titulo": "El Padrino", "categoria:":"drama"}  | 201 Created 400 bad request 500 Internal Server Error  |
+| DELETE | /movies/{movieId}                                     | N/A  | N/A  | {"message": "Pelicula eliminada"}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
+| PUT (NO es parcialmente) | /movies/{movieId}                                     | N/A  | {"titulo": "El Padrino II", "categoria": "drama / historica"}  | {"movieId": 1, "titulo": "El Padrino II", "categoria:":"drama /  historica"}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
+| POST  | /rooms                                                |  N/A | {"numero": 7} | {"roomId": 1, "numero": 7}  | 201 Created 400 bad request 500 Internal Server Error  |
+| DELETE | /rooms/{roomId}                                       | N/A  | N/A  | {"message": "Sala eliminada"}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
+| PATCH (parcialmente) | /rooms/{roomId}                                       | N/A  | {"numero": 3}  | {"roomId": 1, "numero:": 3}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
+| POST  | /users                                                |  N/A | {"nombre": "Alberto Hevia"} | {"userId": 1, "nombre": "Alberto Hevia"}  | 201 Created 400 bad request 500 Internal Server Error  |
+| DELETE | /users/{userId}                                       | N/A  | N/A  | {"message": "Usuario eliminada"}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
+| PATCH (parcialmente) | /users/{userId}                                       | N/A  | {"nombre": "Alberto Hevia López"}  | {"userId": 1, "nombre:": "Alberto Hevia López"}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
+| POST  | /users/{userId}/reservations                          |  N/A | {"movieId": 1, "roomId": 1} | {"userId": 1, "reservationId": 1, "movieId": 1, "roomId": 1}  | 201 Created 400 bad request 500 Internal Server Error  |
+| DELETE | /users/{userId}/reservations/{reservationId}          | N/A  | N/A  | {"message": "Reserva Elimina"}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error  |
+| PATCH (solamente modifica la pelicula no la sala) | /users/{userId}/reservations/{reservationId}          | N/A  | {"movieId": 2}  | {"userId": 1, "reservationId": 1, "movieId": 2, "roomId": 1}  | 200 OK 400 Bad request 404 Not Found 500 Internal Server Error |
+| POST (pago de la reserva)  | /users/{userId}/reservations/{reservationId}/payments |  N/A | {"importe": 9.50} | {"userId": 1, "reservationId": 1, "paymentId": 1, "pago": 9.50}  | 201 Created 400 bad request 500 Internal Server Error  |
